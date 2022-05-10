@@ -12,8 +12,11 @@ public class ejercicio2 {
         num3 = in.nextInt();//se almacena el tercer numero ingresado por consola
         in.close();//cerramos el objeto escanner instanciado luego de ingresar los valores
         //imprimimos en consola los valores ingresados y almacenados 
-        System.out.println("\nEl primer n° ingresado es: " + num1);
-        System.out.println("El segundo n° ingresado es: " + num2);
-        System.out.println("El tercer n° ingresado es: " + num3);
+        System.out.println(mostrarNumerosIngresadosEnOrden(num1, num2, num3));
+    }
+    public static String mostrarNumerosIngresadosEnOrden (int a, int b, int c) {
+        return "\nEl primer n° es " + a +
+        "\nEl segundo n° es " + b + 
+        "\nEl tercer n° es " + c;
     }
 }

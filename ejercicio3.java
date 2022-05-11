@@ -8,19 +8,21 @@ public class ejercicio3 {
         System.out.print("Introduce el la calificacion del alumno: ");
         calificacion = in.nextInt();//introduccion del valor por consola
         in.close();
-        if (calificacion <= 100 && calificacion >= 93) {
-            System.out.println("\nCalificacion: Excelente");
-        } else if (calificacion < 93 && calificacion >= 85) {
-            System.out.println("\nCalificacion: Sobresaliente");
-        } else if (calificacion < 85 && calificacion >= 75) {
-            System.out.println("\nCalificacion: Distinguido");
-        } else if (calificacion < 75 && calificacion >= 60) {
-            System.out.println("\nCalificacion: Bueno");
-        } else if (calificacion < 60 && calificacion >= 0) {
-            System.out.println("\nCalificacion: Desaprobado");
+        System.out.println("\nCalificacion: " + devolverCalificacion(calificacion));
+    }
+    public static String devolverCalificacion (int num) {
+        if (num >= 0 && num < 59) {
+            return "Desaprobado";
+        } else if (num < 75) {
+            return "Bueno";
+        } else if (num < 85) {
+            return "Distinguido";
+        } else if (num < 93) {
+            return "Sobresaliente";
+        } else if (num <= 100) {
+            return "Excelente";
         } else {
-            System.out.println("\nError: numero Incorrecto");
+            return "ERROR: numero incorrecto";
         }
-
     }
 }

@@ -2,38 +2,44 @@ import java.util.Scanner;
 
 public class ejercicio4 {
     public static void main(String[] args) {
-        int numero = 0; //declaracion de variable
+        int numero = 0, op = 1; //declaracion de variable
         Scanner in = new Scanner(System.in);//instanciar el objeto escaner
-        System.out.println("\nEste programa pide un numero del 1 al 7 y devuelve el dia de la semana segun el numero ingresado.");
-        System.out.print("Introduce un numero del 1 al 7: ");
-        numero = in.nextInt();//almacenamos el valor ingresado por consola
+        
+        while (op == 1){
+            System.out.println("\nEste programa pide un numero del 1 al 7 y devuelve el dia de la semana segun el numero ingresado.");
+            System.out.print("Introduce un numero del 1 al 7: ");
+            numero = in.nextInt();//almacenamos el valor ingresado por consola
+            System.out.println("Dia: " + devolverDiaDeLaSemana(numero));
+
+            System.out.print("\nSi deseas continuar presina 1, de lo contrario cualquier otro numero: ");
+            op = in.nextInt();
+            if (op != 1){
+                break;
+            }
+        }
+        System.out.println("El programa ha finalizado");
         in.close();//cerramos el objeto escanner
 
-        switch (numero){
+       
+    }
+    public static String devolverDiaDeLaSemana(int num){
+        switch (num){
             case 1:
-                System.out.println("\nLunes");
-                break;
+                return "Lunes";
             case 2:
-                System.out.println("\nMartes");
-                break;
+                return "Martes";
             case 3:
-                System.out.println("\nMiercoles");
-                break;
+                return "Miercoles";
             case 4:
-                System.out.println("\nJueves");
-                break;
+                return "Jueves";
             case 5:
-                System.out.println("\nViernes");
-                break;
+                return "Viernes";
             case 6:
-                System.out.println("\nSabado");
-                break;
+                return "Sabado";
             case 7:
-                System.out.println("\nDomingo");
-                break;
+                return "Domingo";
             default:
-                System.out.println("\nError: numero fuera de rango");
-                break;
+                return "Error: numero incorrecto";
         }
     }
 }
